@@ -1,0 +1,24 @@
+<div id="container">
+    <div id="inner_container">
+        <div id="header">
+            <span>PROFILE LIST</span>
+        </div>
+        <div>
+           
+      <md-list flex class="home" >
+        <md-list-item ng-repeat="user in userDetails" ng-click="editDetails(user.id)" class="noright">
+            <p>{{user.firstName}}, {{user.lastName}}</p>
+            <md-button id="del" class="md-raised" ng-click="deleteDirectory(user.id);$event.stopPropagation();">Delete</md-button>
+            <md-divider></md-divider>
+        </md-list-item>
+        
+      </md-list>
+  
+            <md-button md-no-ink id="new" class="md-raised md-primary" id="add_contact" ng-click="addContact()">New Profile</md-button>
+        </div>
+    </div>
+</div>
+
+
+
+

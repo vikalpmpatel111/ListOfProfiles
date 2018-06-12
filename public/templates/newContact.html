@@ -1,0 +1,55 @@
+<md-content id="add" layout-padding>
+    <div class="add-contact">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline head">CREATE A NEW PROFILE</span>
+            </md-card-title-text>
+        </md-card-title>
+        <form name="userForm" class="userForm">
+            <div layout-gt-sm="row">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>First name</label>
+                    <input ng-model="user.firstName" name="fname" ng-pattern="/^[a-zA-Z '-]*$/" required>
+                    <span class="error" ng-show="(userForm.fname.$error.required || userForm.fname.$error.pattern) && (userForm.fname.$dirty || form_submit)">
+                        Must include first name</span>
+                    <br>
+                    <br>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm ng-pattern="/^[a-zA-Z '-]*$/" required>
+                    <label>Last name</label>
+                    <input ng-model="user.lastName" name="lname" ng-pattern="/^[a-zA-Z '-]*$/" required>
+                    <span class="error" ng-show="(userForm.lname.$error.required || userForm.lname.$error.pattern) && (userForm.lname.$dirty || form_submit)">
+                        Must include first name</span>
+                    <br>
+                    <br>
+                </md-input-container>
+            </div>
+            <md-input-container class="md-block">
+                <label>Email</label>
+                <input ng-model="user.email" name="email" ng-pattern="/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/"
+                    required>
+                <span class="error" ng-show="(userForm.email.$error.required || userForm.email.$error.pattern) && (userForm.email.$dirty || form_submit)">
+                    Must include valid email</span>
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Phone #</label>
+                <input ng-model="user.telephone" name="phone" required>
+                <span class="error" ng-show="userForm.phone.$error.required  && (userForm.phone.$dirty || form_submit)"> Must include phone number</span>
+                <br>
+                <br>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label>Address</label>
+                <input ng-model="user.address" name="address" required>
+                <span class="error" ng-show="userForm.address.$error.required  && (userForm.address.$dirty || form_submit)"> Must include address</span>
+                <br>
+                <br>
+            </md-input-container>
+
+      
+            <md-button md-no-ink class="md-raised md-primary" ng-click="saveData()">Submit</md-button>
+            <md-button md-no-ink class="md-raised md-primary" ng-click="goToHome()">Home</md-button>
+        </form>
+    </div>
+</md-content>

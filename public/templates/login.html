@@ -1,0 +1,18 @@
+<md-content layout-padding>
+    <div class="login-user">
+        <form name="userForm">
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>User Name</label>
+                <input ng-model="user.username">
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Password</label>
+                <input type="password" ng-model="user.password">
+            </md-input-container>
+            <md-button md-no-ink class="md-raised md-primary" ng-click="login()" id="login">Login</md-button>
+            <span class="error" ng-show="userAuth"> Invalid Username or password</span>
+            <br>
+            <br>
+        </form>
+    </div>
+</md-content>
