@@ -1,3 +1,7 @@
+### install node.js if not already installed
+follow this link:
+https://nodejs.org/en/download/
+
 ### install the packages
 
 npm install
@@ -35,7 +39,7 @@ http://localhost:3000/
 
 ## Usability
 
--->Home page will have list of profiles
--->Click on profile list will open a new view where user can edit the profile.
--->Click on NEW PROFILE button on home page will open a new view where user can create a new profile which will be displayed in list of profile on Home page.
--->Click on DELETE button to remove entry of a profile from the list.
+-->Home page will have list of profiles.  
+-->Click on profile list will open a new view where user can edit the profile.  
+-->Click on NEW PROFILE button on home page will open a new view where user can create a new profile which will be displayed in list of profile on Home page.  
+-->Click on DELETE button to remove entry of a profile from the list.  
