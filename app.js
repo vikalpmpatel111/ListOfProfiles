@@ -30,7 +30,7 @@ getContactById = function getContactById(id) {
 
 //This routes all document requests to the public folder
 app.use('/', express.static(__dirname + '/public'));
-app.use(bodyParser());
+app.use(bodyParser.json());
 app.use(methodOverride());
 
 app.get('/api/contacts/:id', function (req, res) {
@@ -71,24 +71,26 @@ app.put('/api/contacts', function (req, res) {
     res.send(contact);
 });
 
-app.del('/api/contacts/:id', function (req, res) {
-
-    var id = parseInt(req.params.id),
-        i;
-
-    for (i = 0; i < contacts.length; i++) {
-
-        if (contacts[i].id === id) {
-
-            contacts.splice(i, 1);
-
-            res.send(true);
-            break;
+app.delete('/api/contacts/:id', function (req, res) {
+    var booli=false;
+        var id = parseInt(req.params.id),
+            i;
+    
+        for (i = 0; i < contacts.length; i++) {
+    
+            if (contacts[i].id === id) {
+    
+                contacts.splice(i, 1);
+    
+                res.send(true);
+                booli=true;
+                break;
+            }
         }
+        if(!booli){
+        res.send(false);
     }
-
-    res.send(false);
-});
+    });
 
 app.listen(3000);
 
